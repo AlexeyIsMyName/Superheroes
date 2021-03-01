@@ -56,15 +56,55 @@
 		E79CF30C25ED8B6E00056B17 /* Superheroes */ = {
 			isa = PBXGroup;
 			children = (
-				E79CF30D25ED8B6E00056B17 /* AppDelegate.swift */,
-				E79CF30F25ED8B6E00056B17 /* SceneDelegate.swift */,
-				E79CF31125ED8B6E00056B17 /* ViewController.swift */,
-				E79CF31325ED8B6E00056B17 /* Main.storyboard */,
-				E79CF31625ED8B6F00056B17 /* Assets.xcassets */,
-				E79CF31825ED8B6F00056B17 /* LaunchScreen.storyboard */,
-				E79CF31B25ED8B6F00056B17 /* Info.plist */,
+				E79CF32725ED8C0500056B17 /* ViewControllers */,
+				E79CF32925ED8C2000056B17 /* Models */,
+				E79CF32625ED8BF800056B17 /* Storyboards */,
+				E79CF32425ED8BE400056B17 /* SupportingFiles */,
+				E79CF32325ED8BC800056B17 /* Resources */,
 			);
 			path = Superheroes;
+			sourceTree = "<group>";
+		};
+		E79CF32325ED8BC800056B17 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E79CF31625ED8B6F00056B17 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		E79CF32425ED8BE400056B17 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				E79CF30D25ED8B6E00056B17 /* AppDelegate.swift */,
+				E79CF30F25ED8B6E00056B17 /* SceneDelegate.swift */,
+				E79CF31B25ED8B6F00056B17 /* Info.plist */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		E79CF32625ED8BF800056B17 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				E79CF31325ED8B6E00056B17 /* Main.storyboard */,
+				E79CF31825ED8B6F00056B17 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		E79CF32725ED8C0500056B17 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				E79CF31125ED8B6E00056B17 /* ViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		E79CF32925ED8C2000056B17 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -288,7 +328,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZG8HC24927;
-				INFOPLIST_FILE = Superheroes/Info.plist;
+				INFOPLIST_FILE = Superheroes/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -296,7 +336,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = suslov.aleksey.Superheroes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -307,7 +347,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZG8HC24927;
-				INFOPLIST_FILE = Superheroes/Info.plist;
+				INFOPLIST_FILE = Superheroes/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -315,7 +355,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = suslov.aleksey.Superheroes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
