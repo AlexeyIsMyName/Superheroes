@@ -8,8 +8,8 @@
 struct AppearanceHero: Decodable {
     let gender: String?
     let race: String?
-    let height: [String?]
-    let weight: [String?]
+    let height: [String]?
+    let weight: [String]?
     let eye_color: String?
     let hair_color: String?
 }
