@@ -15,12 +15,14 @@ struct PowerstatsHero: Decodable {
     
     var description: String {
         """
-        Intelligence: \(intelligence ?? "")
-        Strength: \(strength ?? "")
-        Speed: \(speed ?? "")
-        Durability: \(durability ?? "")
-        Power: \(power ?? "")
-        Combat: \(combat ?? "")
+        ⌁
+        🤓 Intelligence: \(intelligence ?? "")
+        💪 Strength: \(strength ?? "")
+        🏃 Speed: \(speed ?? "")
+        Durability: \(durability ?? "") 💎
+        Power: \(power ?? "") 🍔
+        Combat: \(combat ?? "") 🤺
+        ⌁
         """
     }
 }

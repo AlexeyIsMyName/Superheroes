@@ -26,13 +26,24 @@ struct BiographyHero: Decodable {
     
     var description: String {
         """
-        Full Name: \(fullName ?? "unknown")
-        Alter-egos: \(alterEgos ?? "unknown")
-        Aliases: \(aliases?.joined(separator: ", ") ?? "unknown")
-        Place of Birth: \(placeOfBirth ?? "unknown")
-        First Appearance: \(firstAppearance ?? "unknown")
-        Publisher: \(publisher ?? "unknown")
-        Alignment: \(alignment ?? "unknown")
+        ⌁
+        ✪ Full Name: \(fullName ?? "unknown")
+        
+        ⎌ Alter-egos: \(alterEgos ?? "unknown")
+        
+        ⎆ Aliases:
+        \(aliases?.joined(separator: ", ") ?? "unknown")
+        
+        ⚓︎ Place of Birth:
+        \(placeOfBirth ?? "unknown")
+        
+        ⚐ First Appearance:
+        \(firstAppearance ?? "unknown")
+        
+        ® Publisher: \(publisher ?? "unknown")
+        
+        ⚔︎ Alignment: \(alignment ?? "unknown")
+        ⌁
         """
     }
 }
