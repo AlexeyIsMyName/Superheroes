@@ -6,11 +6,33 @@
 //
 
 struct BiographyHero: Decodable {
-    let full_name: String?
-    let alter_egos: String?
+    enum CodingKeys: String, CodingKey {
+        case fullName = "full-name"
+        case alterEgos = "alter-egos"
+        case aliases
+        case placeOfBirth = "place_of_birth"
+        case firstAppearance = "first-appearance"
+        case publisher
+        case alignment
+    }
+    
+    let fullName: String?
+    let alterEgos: String?
     let aliases: [String]?
-    let place_of_birth: String?
-    let first_appearance: String?
+    let placeOfBirth: String?
+    let firstAppearance: String?
     let publisher: String?
     let alignment: String?
+    
+    var description: String {
+        """
+        fullName: \(fullName ?? "unknown")
+        alterEgos: \(alterEgos ?? "unknown")
+        aliases: \(aliases?.joined(separator: ", ") ?? "unknown")
+        placeOfBirth: \(placeOfBirth ?? "unknown")
+        firstAppearance: \(firstAppearance ?? "unknown")
+        publisher: \(publisher ?? "unknown")
+        alignment: \(alignment ?? "unknown")
+        """
+    }
 }

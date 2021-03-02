@@ -58,7 +58,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="5Hf-ci-my0">
-                                <rect key="frame" x="0.0" y="8" width="320" height="1159"/>
+                                <rect key="frame" x="0.0" y="8" width="320" height="1162"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="myl-u7-r9H">
                                         <rect key="frame" x="135.5" y="0.0" width="49" height="23.5"/>
@@ -66,15 +66,15 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0US-Th-rVM">
-                                        <rect key="frame" x="0.0" y="33.5" width="320" height="1095"/>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p3V-Eb-jim">
-                                        <rect key="frame" x="139.5" y="1138.5" width="41.5" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p3V-Eb-jim">
+                                        <rect key="frame" x="135.5" y="33.5" width="49" height="23.5"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0US-Th-rVM">
+                                        <rect key="frame" x="0.0" y="67" width="320" height="1095"/>
+                                    </imageView>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -91,6 +91,7 @@
                     </scrollView>
                     <navigationItem key="navigationItem" id="nJE-sZ-GX4"/>
                     <connections>
+                        <outlet property="biographyLabel" destination="p3V-Eb-jim" id="846-BT-Sge"/>
                         <outlet property="imageHeroImageView" destination="0US-Th-rVM" id="6GX-HJ-85C"/>
                         <outlet property="powerstatsLabel" destination="myl-u7-r9H" id="xPT-AH-YSa"/>
                     </connections>

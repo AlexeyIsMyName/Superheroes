@@ -11,6 +11,7 @@ class DetailsHeroViewController: UIViewController {
 
     @IBOutlet var imageHeroImageView: UIImageView!
     @IBOutlet var powerstatsLabel: UILabel!
+    @IBOutlet var biographyLabel: UILabel!
     
     var hero: Hero!
     
@@ -19,6 +20,7 @@ class DetailsHeroViewController: UIViewController {
         configureImage()
         navigationItem.title = hero.name
         powerstatsLabel.text = hero.powerstats?.description
+        biographyLabel.text = hero.biography?.description
     }
     
     func configureImage() {
