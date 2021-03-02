@@ -6,6 +6,23 @@
 //
 
 struct ConnectionsHero: Decodable {
-    let group_affiliation: String?
+    enum CodingKeys: String, CodingKey {
+        case groupAffiliation = "group-affiliation"
+        case relatives
+    }
+    
+    let groupAffiliation: String?
     let relatives: String?
+    
+    var description: String {
+        """
+        ⌁
+        Group Affiliation:
+        \(groupAffiliation ?? "unknown")
+
+        Relatives:
+        \(relatives ?? "unknown")
+        ⌁
+        """
+    }
 }

@@ -24,12 +24,14 @@ struct AppearanceHero: Decodable {
     
     var description: String {
         """
+        ⌁
         Gender: \(gender ?? "unknown")
         Race: \(race ?? "unknown")
         Height: \(height?.joined(separator: ", ") ?? "unknown")
         Weight: \(weight?.joined(separator: ", ") ?? "unknown")
         Eye Color: \(eyeColor ?? "unknown")
         Hair Color: \(hairColor ?? "unknown")
+        ⌁
         """
     }
 }

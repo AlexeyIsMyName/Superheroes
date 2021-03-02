@@ -25,6 +25,8 @@ class DetailsHeroViewController: UIViewController {
         powerstatsLabel.text = hero.powerstats?.description
         biographyLabel.text = hero.biography?.description
         appearanceLabel.text = hero.appearance?.description
+        workLabel.text = hero.work?.description
+        connectionsLabel.text = hero.connections?.description
     }
     
     func configureImage() {
