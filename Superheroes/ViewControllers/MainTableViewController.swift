@@ -14,23 +14,15 @@ class MainTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //tableView.rowHeight = 150
-        
         fetchHeroes()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 1
-    }
+//    override func numberOfSections(in tableView: UITableView) -> Int {
+//        // #warning Incomplete implementation, return the number of sections
+//        return 1
+//    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
@@ -104,20 +96,53 @@ class MainTableViewController: UITableViewController {
 extension MainTableViewController {
     func fetchHeroes() {
         
-        for id in 105...125 {
+//        DispatchQueue.global().async {
+//            for id in 1...100 {
+//                let stringURL = "https://superheroapi.com/api/3898713710192169/\(id)"
+//
+//                guard let url = URL(string: stringURL) else { return }
+//
+//                URLSession.shared.dataTask(with: url) { (data, _, _) in
+//                    guard let data = data else { return }
+//                    do {
+//                        self.heroes.append(try JSONDecoder().decode(Hero.self, from: data))
+//                    } catch let error {
+//                        print(error)
+//                    }
+//                }.resume()
+//            }
+//            DispatchQueue.main.async {
+//                self.heroes.sort { (hero1, hero0) -> Bool in
+//                    if let name1 = hero1.name, let name0 = hero0.name {
+//                         return name1 < name0
+//                    }
+//                    return false
+//                }
+//                self.tableView.reloadData()
+//            }
+//        }
+        
+        
+        for id in 1...100 {
             let stringURL = "https://superheroapi.com/api/3898713710192169/\(id)"
-            
+
             guard let url = URL(string: stringURL) else { return }
-            
+
             URLSession.shared.dataTask(with: url) { (data, _, _) in
                 guard let data = data else { return }
                 do {
                     self.heroes.append(try JSONDecoder().decode(Hero.self, from: data))
-                    DispatchQueue.main.async {
-                        self.tableView.reloadData()
-                    }
                 } catch let error {
                     print(error)
+                }
+                DispatchQueue.main.async {
+                    self.heroes.sort { (hero1, hero0) -> Bool in
+                        if let name1 = hero1.name, let name0 = hero0.name {
+                             return name1 < name0
+                        }
+                        return false
+                    }
+                    self.tableView.reloadData()
                 }
             }.resume()
         }

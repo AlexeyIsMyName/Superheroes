@@ -10,7 +10,7 @@ struct BiographyHero: Decodable {
         case fullName = "full-name"
         case alterEgos = "alter-egos"
         case aliases
-        case placeOfBirth = "place_of_birth"
+        case placeOfBirth = "place-of-birth"
         case firstAppearance = "first-appearance"
         case publisher
         case alignment
@@ -26,13 +26,13 @@ struct BiographyHero: Decodable {
     
     var description: String {
         """
-        fullName: \(fullName ?? "unknown")
-        alterEgos: \(alterEgos ?? "unknown")
-        aliases: \(aliases?.joined(separator: ", ") ?? "unknown")
-        placeOfBirth: \(placeOfBirth ?? "unknown")
-        firstAppearance: \(firstAppearance ?? "unknown")
-        publisher: \(publisher ?? "unknown")
-        alignment: \(alignment ?? "unknown")
+        Full Name: \(fullName ?? "unknown")
+        Alter-egos: \(alterEgos ?? "unknown")
+        Aliases: \(aliases?.joined(separator: ", ") ?? "unknown")
+        Place of Birth: \(placeOfBirth ?? "unknown")
+        First Appearance: \(firstAppearance ?? "unknown")
+        Publisher: \(publisher ?? "unknown")
+        Alignment: \(alignment ?? "unknown")
         """
     }
 }
