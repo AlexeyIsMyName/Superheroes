@@ -12,4 +12,15 @@ struct PowerstatsHero: Decodable {
     let durability: String?
     let power: String?
     let combat: String?
+    
+    var description: String {
+        """
+        intelligence: \(intelligence ?? "")
+        strength: \(strength ?? "")
+        speed: \(speed ?? "")
+        durability: \(durability ?? "")
+        power: \(power ?? "")
+        combat: \(combat ?? "")
+        """
+    }
 }

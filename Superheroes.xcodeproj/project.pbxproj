@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E758631425EDB0EC008A2559 /* DetailsHeroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E758631325EDB0EC008A2559 /* DetailsHeroViewController.swift */; };
 		E79CF30E25ED8B6E00056B17 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79CF30D25ED8B6E00056B17 /* AppDelegate.swift */; };
 		E79CF31025ED8B6E00056B17 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79CF30F25ED8B6E00056B17 /* SceneDelegate.swift */; };
 		E79CF31525ED8B6E00056B17 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E79CF31325ED8B6E00056B17 /* Main.storyboard */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E758631325EDB0EC008A2559 /* DetailsHeroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsHeroViewController.swift; sourceTree = "<group>"; };
 		E79CF30A25ED8B6E00056B17 /* Superheroes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Superheroes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E79CF30D25ED8B6E00056B17 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E79CF30F25ED8B6E00056B17 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				E79CF32D25ED90F400056B17 /* MainTableViewController.swift */,
+				E758631325EDB0EC008A2559 /* DetailsHeroViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -208,6 +211,7 @@
 				E79CF32E25ED90F400056B17 /* MainTableViewController.swift in Sources */,
 				E79CF31025ED8B6E00056B17 /* SceneDelegate.swift in Sources */,
 				E79CF33725ED947300056B17 /* AppearanceHero.swift in Sources */,
+				E758631425EDB0EC008A2559 /* DetailsHeroViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

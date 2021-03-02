@@ -14,7 +14,7 @@ class MainTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.rowHeight = 150
+        //tableView.rowHeight = 150
         
         fetchHeroes()
 
@@ -43,7 +43,7 @@ class MainTableViewController: UITableViewController {
 
         let hero = heroes[indexPath.row]
         cell.textLabel?.text = hero.name
-        cell.imageView?.image = image
+        cell.detailTextLabel?.text = hero.biography?.full_name
         
         return cell
     }
@@ -84,15 +84,16 @@ class MainTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        guard let detailsHeroVC = segue.destination as? DetailsHeroViewController else { return }
+        guard let indexPath = tableView.indexPathForSelectedRow else { return }
+        detailsHeroVC.hero = heroes[indexPath.row]
     }
-    */
+    
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
@@ -102,34 +103,23 @@ class MainTableViewController: UITableViewController {
 // MARK: - Networking
 extension MainTableViewController {
     func fetchHeroes() {
-        let stringURL1 = "https://superheroapi.com/api/3898713710192169/732"
         
-        guard let url1 = URL(string: stringURL1) else { return }
-        
-        URLSession.shared.dataTask(with: url1) { (data, _, _) in
-            guard let data = data else { return }
-            do {
-                self.heroes.append(try JSONDecoder().decode(Hero.self, from: data))
-                DispatchQueue.main.async {
-                    self.tableView.reloadData()
-                    self.configureImage()
-                }
-            } catch let error {
-                print(error)
-            }
-        }.resume()
-    }
-    
-    func configureImage() {
-        DispatchQueue.global().async {
-            guard let stringURL = self.heroes[0].image?.url else { return }
-            guard let imageURL = URL(string: stringURL) else { return }
-            guard let imageData = try? Data(contentsOf: imageURL) else { return }
+        for id in 105...125 {
+            let stringURL = "https://superheroapi.com/api/3898713710192169/\(id)"
             
-            DispatchQueue.main.async {
-                self.image = UIImage(data: imageData)
-                self.tableView.reloadData()
-            }
+            guard let url = URL(string: stringURL) else { return }
+            
+            URLSession.shared.dataTask(with: url) { (data, _, _) in
+                guard let data = data else { return }
+                do {
+                    self.heroes.append(try JSONDecoder().decode(Hero.self, from: data))
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
+                    }
+                } catch let error {
+                    print(error)
+                }
+            }.resume()
         }
     }
 }
