@@ -25,12 +25,12 @@ struct BiographyHero: Decodable {
     let alignment: String?
     
     var description: String {
-        """
+        return """
         ⌁
         ✪ Full Name: \(fullName ?? "unknown")
         
         ⎌ Alter-egos: \(alterEgos ?? "unknown")
-        
+
         ⎆ Aliases:
         \(aliases?.joined(separator: ", ") ?? "unknown")
         

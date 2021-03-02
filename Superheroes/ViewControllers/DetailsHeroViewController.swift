@@ -38,6 +38,7 @@ class DetailsHeroViewController: UIViewController {
             
             DispatchQueue.main.async {
                 self.imageHeroImageView.image = UIImage(data: imageData)
+                self.imageHeroImageView.isHidden.toggle()
             }
         }
     }
