@@ -26,6 +26,7 @@ class MainTableViewController: UITableViewController {
 
         let hero = heroes[indexPath.row]
         cell.textLabel?.text = hero.name
+        cell.detailTextLabel?.text = hero.biography?.publisher
         
         return cell
     }
