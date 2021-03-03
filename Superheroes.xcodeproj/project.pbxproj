@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E758631425EDB0EC008A2559 /* DetailsHeroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E758631325EDB0EC008A2559 /* DetailsHeroViewController.swift */; };
+		E758631C25EEFEB9008A2559 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E758631B25EEFEB9008A2559 /* DataManager.swift */; };
 		E79CF30E25ED8B6E00056B17 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79CF30D25ED8B6E00056B17 /* AppDelegate.swift */; };
 		E79CF31025ED8B6E00056B17 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79CF30F25ED8B6E00056B17 /* SceneDelegate.swift */; };
 		E79CF31525ED8B6E00056B17 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E79CF31325ED8B6E00056B17 /* Main.storyboard */; };
@@ -25,6 +26,7 @@
 
 /* Begin PBXFileReference section */
 		E758631325EDB0EC008A2559 /* DetailsHeroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsHeroViewController.swift; sourceTree = "<group>"; };
+		E758631B25EEFEB9008A2559 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		E79CF30A25ED8B6E00056B17 /* Superheroes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Superheroes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E79CF30D25ED8B6E00056B17 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E79CF30F25ED8B6E00056B17 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -53,6 +55,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E758631A25EEFE96008A2559 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				E758631B25EEFEB9008A2559 /* DataManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 		E79CF30125ED8B6E00056B17 = {
 			isa = PBXGroup;
 			children = (
@@ -74,6 +84,7 @@
 			children = (
 				E79CF32725ED8C0500056B17 /* ViewControllers */,
 				E79CF32925ED8C2000056B17 /* Models */,
+				E758631A25EEFE96008A2559 /* Managers */,
 				E79CF32625ED8BF800056B17 /* Storyboards */,
 				E79CF32425ED8BE400056B17 /* SupportingFiles */,
 				E79CF32325ED8BC800056B17 /* Resources */,
@@ -202,6 +213,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E79CF30E25ED8B6E00056B17 /* AppDelegate.swift in Sources */,
+				E758631C25EEFEB9008A2559 /* DataManager.swift in Sources */,
 				E79CF34425ED96B900056B17 /* ImageHero.swift in Sources */,
 				E79CF33D25ED956F00056B17 /* ConnectionsHero.swift in Sources */,
 				E79CF34025ED95D500056B17 /* Hero.swift in Sources */,

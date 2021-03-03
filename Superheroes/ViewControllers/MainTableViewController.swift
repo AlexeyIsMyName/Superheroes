@@ -55,7 +55,6 @@ class MainTableViewController: UITableViewController {
 
 // MARK: - Networking
 extension MainTableViewController {
-    
     func fetchHeroes(isAll: Bool) {
         
         let rangeRandom = 1...21
