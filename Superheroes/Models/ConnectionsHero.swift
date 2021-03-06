@@ -25,4 +25,9 @@ struct ConnectionsHero: Decodable {
         ⌁
         """
     }
+    
+    init(connectionsHeroData: [String: String]) {
+        groupAffiliation = connectionsHeroData["group-affiliation"]
+        relatives = connectionsHeroData["relatives"]
+    }
 }

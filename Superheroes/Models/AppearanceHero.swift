@@ -34,4 +34,13 @@ struct AppearanceHero: Decodable {
         ⌁
         """
     }
+    
+    init(appearanceHeroData: [String: Any]) {
+        gender = appearanceHeroData["gender"] as? String
+        race = appearanceHeroData["race"] as? String
+        height = appearanceHeroData["height"] as? [String]
+        weight = appearanceHeroData["weight"] as? [String]
+        eyeColor = appearanceHeroData["eye-color"] as? String
+        hairColor = appearanceHeroData["hair-color"] as? String
+    }
 }

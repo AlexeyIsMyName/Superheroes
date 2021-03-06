@@ -25,4 +25,13 @@ struct PowerstatsHero: Decodable {
         ⌁
         """
     }
+    
+    init(powerstatsHeroData: [String: String]) {
+        intelligence = powerstatsHeroData["intelligence"]
+        strength = powerstatsHeroData["strength"]
+        speed = powerstatsHeroData["speed"]
+        durability = powerstatsHeroData["durability"]
+        power = powerstatsHeroData["power"]
+        combat = powerstatsHeroData["combat"]
+    }
 }

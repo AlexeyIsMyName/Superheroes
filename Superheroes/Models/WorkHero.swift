@@ -20,4 +20,9 @@ struct WorkHero: Decodable {
         ⌁
         """
     }
+    
+    init(workHeroData: [String: String]) {
+        occupation = workHeroData["occupation"]
+        base = workHeroData["base"]
+    }
 }

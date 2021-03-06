@@ -46,4 +46,14 @@ struct BiographyHero: Decodable {
         ⌁
         """
     }
+    
+    init(biographyHeroData: [String: Any]) {
+        fullName = biographyHeroData["full-name"] as? String
+        alterEgos = biographyHeroData["alter-egos"] as? String
+        aliases = biographyHeroData["aliases"] as? [String]
+        placeOfBirth = biographyHeroData["place-of-birth"] as? String
+        firstAppearance = biographyHeroData["first-appearance"] as? String
+        publisher = biographyHeroData["publisher"] as? String
+        alignment = biographyHeroData["alignment"] as? String
+    }
 }

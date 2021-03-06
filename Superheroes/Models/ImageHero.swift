@@ -7,4 +7,8 @@
 
 struct ImageHero: Decodable {
     let url: String?
+    
+    init(imageHeroData: [String: String]) {
+        url = imageHeroData["url"]
+    }
 }
