@@ -13,7 +13,7 @@ class MainTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchHeroes(isAll: false)
+        fetchHeroes(getAll: false)
     }
 
     // MARK: - Table view data source
@@ -43,53 +43,22 @@ class MainTableViewController: UITableViewController {
     }
     
     @IBAction func randomBarButtonPressed(_ sender: Any) {
-        heroes = []
-        fetchHeroes(isAll: false)
+        fetchHeroes(getAll: false)
     }
     
     @IBAction func allBarButtonPressed(_ sender: Any) {
-        heroes = []
-        fetchHeroes(isAll: true)
+        fetchHeroes(getAll: true)
     }
     
 }
 
 // MARK: - Networking
 extension MainTableViewController {
-    func fetchHeroes(isAll: Bool) {
-        
-        let rangeRandom = 1...21
-        let rangeAll = 1...732
-        
-        for id in isAll ? rangeAll : rangeRandom {
-            var stringURL = ""
-            
-            switch isAll {
-            case true: stringURL = "https://superheroapi.com/api/3898713710192169/\(id)"
-            case false: stringURL = "https://superheroapi.com/api/3898713710192169/\(Int.random(in: rangeAll))"
-            }
-            
-            AF.request(stringURL)
-                .validate()
-                .responseJSON { responseData in
-                    switch responseData.result {
-                    case .success(let value):
-                        self.heroes += Hero.getHeroArrayCell(from: value)
-                        
-                        DispatchQueue.main.async {
-                            self.heroes.sort { (hero1, hero0) -> Bool in
-                                if let name1 = hero1.name, let name0 = hero0.name {
-                                    return name1 < name0
-                                }
-                                return false
-                            }
-                            self.tableView.reloadData()
-                        }
-                        
-                    case .failure(let error):
-                        print(error)
-                    }
-                }
+    private func fetchHeroes(getAll: Bool) {
+        heroes = []
+        NetworkManager.shared.fetchHeroData(getAll: getAll) { heroes in
+            self.heroes = heroes
+            self.tableView.reloadData()
         }
     }
 }
