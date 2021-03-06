@@ -10,7 +10,6 @@ import Alamofire
 
 class MainTableViewController: UITableViewController {
     var heroes: [Hero] = []
-    var image: UIImage?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -75,10 +74,9 @@ extension MainTableViewController {
                 .responseJSON { responseData in
                     switch responseData.result {
                     case .success(let value):
-                        guard let heroData = value as? [String: Any] else { return }
+                        self.heroes += Hero.getHeroArrayCell(from: value)
                         
                         DispatchQueue.main.async {
-                            self.heroes.append(Hero(heroData: heroData))
                             self.heroes.sort { (hero1, hero0) -> Bool in
                                 if let name1 = hero1.name, let name0 = hero0.name {
                                     return name1 < name0

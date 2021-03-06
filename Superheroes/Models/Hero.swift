@@ -15,7 +15,7 @@ struct Hero: Decodable {
     let connections: ConnectionsHero?
     let image: ImageHero?
     
-    init(heroData: [String: Any]) {
+    private init(heroData: [String: Any]) {
         let powerstatsHeroData = heroData["powerstats"] as? [String: String] ?? ["": ""]
         let biographyHeroData = (heroData["biography"] as? [String: Any]) ?? ["": ""]
         let appearanceHeroData = (heroData["appearance"] as? [String: Any]) ?? ["": ""]
@@ -31,5 +31,10 @@ struct Hero: Decodable {
         work = WorkHero(workHeroData: workHeroData)
         connections = ConnectionsHero(connectionsHeroData: connectionsHeroData)
         image = ImageHero(imageHeroData: imageHeroData)
+    }
+    
+    static func getHeroArrayCell(from value: Any) -> [Hero] {
+        guard let heroData = value as? [String: Any] else { return []}
+        return [Hero(heroData: heroData)]
     }
 }
