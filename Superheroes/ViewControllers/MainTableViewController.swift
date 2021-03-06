@@ -48,13 +48,11 @@ class MainTableViewController: UITableViewController {
     @IBAction func allBarButtonPressed(_ sender: Any) {
         fetchHeroes(getAll: true)
     }
-    
 }
 
 // MARK: - Networking
 extension MainTableViewController {
     private func fetchHeroes(getAll: Bool) {
-        heroes = []
         NetworkManager.shared.fetchHeroData(getAll: getAll) { heroes in
             self.heroes = heroes
             self.tableView.reloadData()
