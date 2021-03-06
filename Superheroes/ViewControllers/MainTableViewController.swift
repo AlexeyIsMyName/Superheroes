@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class MainTableViewController: UITableViewController {
     var heroes: [Hero] = []
@@ -70,28 +71,25 @@ extension MainTableViewController {
             }
 
             guard let url = URL(string: stringURL) else { return }
-
-            URLSession.shared.dataTask(with: url) { (data, _, error) in
-                if let error = error {
-                    print(error.localizedDescription)
-                } else {
-                    guard let data = data else { return }
-                    do {
-                        self.heroes.append(try JSONDecoder().decode(Hero.self, from: data))
-                    } catch let error {
+            
+            AF.request(url)
+                .responseDecodable(of: Hero.self) { responseData in
+                    switch responseData.result {
+                    case .success(let hero):
+                        self.heroes.append(hero)
+                        DispatchQueue.main.async {
+                            self.heroes.sort { (hero1, hero0) -> Bool in
+                                if let name1 = hero1.name, let name0 = hero0.name {
+                                    return name1 < name0
+                                }
+                                return false
+                            }
+                            self.tableView.reloadData()
+                        }
+                    case .failure(let error):
                         print(error)
                     }
-                    DispatchQueue.main.async {
-                        self.heroes.sort { (hero1, hero0) -> Bool in
-                            if let name1 = hero1.name, let name0 = hero0.name {
-                                return name1 < name0
-                            }
-                            return false
-                        }
-                        self.tableView.reloadData()
-                    }
                 }
-            }.resume()
         }
     }
 }
