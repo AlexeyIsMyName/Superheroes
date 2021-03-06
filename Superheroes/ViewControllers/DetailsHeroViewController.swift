@@ -31,16 +31,19 @@ class DetailsHeroViewController: UIViewController {
     }
     
     func configureImage() {
-        DispatchQueue.global().async {
-            
-            guard let stringURL = self.hero.image?.url else { return }
-            guard let imageURL = URL(string: stringURL) else { return }
-            guard let imageData = try? Data(contentsOf: imageURL) else { return }
-            
-            DispatchQueue.main.async {
-                self.imageHeroImageView.image = UIImage(data: imageData)
-                self.imageHeroImageView.isHidden.toggle()
+        guard let stringURL = self.hero.image?.url else { return }
+        AF.request(stringURL)
+            .validate()
+            .responseData { responseData in
+                switch responseData.result {
+                case .success(let value):
+                    DispatchQueue.main.async {
+                        self.imageHeroImageView.image = UIImage(data: value)
+                        self.imageHeroImageView.isHidden.toggle()
+                    }
+                case .failure(let error):
+                    print(error)
+                }
             }
-        }
     }
 }
