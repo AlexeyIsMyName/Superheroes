@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import Alamofire
 
 class MainTableViewController: UITableViewController {
     var heroes: [Hero] = []

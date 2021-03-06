@@ -56,7 +56,18 @@ class NetworkManager {
         }
     }
     
-    func fetchImageData(from url: String?, with complition: (UIImage) -> Void) {
-        
+    func fetchImageData(from url: String, with complition: @escaping (UIImage?) -> Void) {
+        AF.request(url)
+            .validate()
+            .responseData { responseData in
+                switch responseData.result {
+                case .success(let value):
+                    DispatchQueue.main.async {
+                        complition(UIImage(data: value))
+                    }
+                case .failure(let error):
+                    print(error)
+                }
+            }
     }
 }

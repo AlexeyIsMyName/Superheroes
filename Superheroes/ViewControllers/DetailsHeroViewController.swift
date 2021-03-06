@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import Alamofire
 
 class DetailsHeroViewController: UIViewController {
 
@@ -32,18 +31,9 @@ class DetailsHeroViewController: UIViewController {
     
     func configureImage() {
         guard let stringURL = self.hero.image?.url else { return }
-        AF.request(stringURL)
-            .validate()
-            .responseData { responseData in
-                switch responseData.result {
-                case .success(let value):
-                    DispatchQueue.main.async {
-                        self.imageHeroImageView.image = UIImage(data: value)
-                        self.imageHeroImageView.isHidden.toggle()
-                    }
-                case .failure(let error):
-                    print(error)
-                }
-            }
+        NetworkManager.shared.fetchImageData(from: stringURL) { image in
+            self.imageHeroImageView.image = image
+            self.imageHeroImageView.isHidden.toggle()
+        }
     }
 }
