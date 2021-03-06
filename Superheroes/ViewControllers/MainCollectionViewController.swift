@@ -22,10 +22,10 @@ class MainCollectionViewController: UICollectionViewController {
     
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let detailsHeroCVC = segue.destination as? DetailsHeroCollectionViewController else { return }
+        guard let detailsHeroVC = segue.destination as? DetailsHeroViewController else { return }
         guard let indexPath = collectionView.indexPathsForSelectedItems?[0] else { return }
         
-        detailsHeroCVC.hero = heroes[indexPath.row]
+        detailsHeroVC.hero = heroes[indexPath.row]
     }
     
     // MARK: UICollectionViewDataSource
@@ -60,7 +60,6 @@ extension MainCollectionViewController {
     }
     
     private func showSpinner() {
-        //activityIndicator.center = view.center
         activityIndicator.startAnimating()
     }
 }
