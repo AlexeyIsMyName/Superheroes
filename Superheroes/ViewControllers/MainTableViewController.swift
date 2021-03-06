@@ -10,8 +10,12 @@ import UIKit
 class MainTableViewController: UITableViewController {
     var heroes: [Hero] = []
     
+    @IBOutlet var activityIndicator: UIActivityIndicatorView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.addSubview(activityIndicator)
+        showSpinner()
         fetchHeroes(getAll: false)
     }
 
@@ -54,21 +58,22 @@ class MainTableViewController: UITableViewController {
 // MARK: - Networking
 extension MainTableViewController {
     private func fetchHeroes(getAll: Bool) {
+        showSpinner()
         NetworkManager.shared.fetchHeroData(getAll: getAll) { heroes in
             self.heroes = heroes
             self.tableView.reloadData()
+            self.activityIndicator.stopAnimating()
+            self.tableView.isUserInteractionEnabled = true
+            self.tableView.setContentOffset(CGPoint(x: 0, y: 0),
+                                            animated: true)
         }
     }
     
-    private func showSpinner(in view: UIView) -> UIActivityIndicatorView {
-        let activityIndicator = UIActivityIndicatorView(style: .large)
-        activityIndicator.color = .gray
+    private func showSpinner() {
+        tableView.isUserInteractionEnabled = false
+        activityIndicator.center = CGPoint(x: tableView.contentOffset.x + tableView.frame.width / 2,
+                                           y: tableView.contentOffset.y + tableView.frame.height / 2)
+        
         activityIndicator.startAnimating()
-        activityIndicator.center = view.center
-        activityIndicator.hidesWhenStopped = true
-        
-        view.addSubview(activityIndicator)
-        
-        return activityIndicator
     }
 }

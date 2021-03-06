@@ -6,7 +6,6 @@
 //
 
 import UIKit
-
 class DetailsHeroViewController: UIViewController {
 
     @IBOutlet var imageHeroImageView: UIImageView!
@@ -16,10 +15,13 @@ class DetailsHeroViewController: UIViewController {
     @IBOutlet var workLabel: UILabel!
     @IBOutlet var connectionsLabel: UILabel!
     
+    @IBOutlet var activityIndicator: UIActivityIndicatorView!
+    
     var hero: Hero!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.isUserInteractionEnabled = false
         configureImage()
         navigationItem.title = hero.name
         powerstatsLabel.text = hero.powerstats?.description
@@ -29,11 +31,22 @@ class DetailsHeroViewController: UIViewController {
         connectionsLabel.text = hero.connections?.description
     }
     
-    func configureImage() {
-        guard let stringURL = self.hero.image?.url else { return }
+    private func configureImage() {
+        guard let stringURL = self.hero.image?.url else {
+            self.view.isUserInteractionEnabled = true
+            self.activityIndicator.stopAnimating()
+            return
+        }
         NetworkManager.shared.fetchImageData(from: stringURL) { image in
             self.imageHeroImageView.image = image
             self.imageHeroImageView.isHidden.toggle()
+            self.view.isUserInteractionEnabled = true
+            self.activityIndicator.stopAnimating()
         }
+    }
+    
+    private func showSpinner() {
+        activityIndicator.center = view.center
+        activityIndicator.startAnimating()
     }
 }
