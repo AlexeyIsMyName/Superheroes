@@ -16,7 +16,6 @@ class MainCollectionViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        showSpinner()
         fetchHeroes(getAll: false)
     }
     
@@ -40,6 +39,14 @@ class MainCollectionViewController: UICollectionViewController {
         cell.nameHeroLabel.text = hero.name
     
         return cell
+    }
+    
+    @IBAction func randomBarButtonPressed(_ sender: Any) {
+        fetchHeroes(getAll: false)
+    }
+    
+    @IBAction func allBarButtonPressed(_ sender: Any) {
+        fetchHeroes(getAll: true)
     }
 }
 

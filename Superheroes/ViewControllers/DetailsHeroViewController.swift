@@ -21,7 +21,6 @@ class DetailsHeroViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //view.isUserInteractionEnabled = false
         configureImage()
         navigationItem.title = hero.name
         powerstatsLabel.text = hero.powerstats?.description
@@ -33,14 +32,12 @@ class DetailsHeroViewController: UIViewController {
     
     private func configureImage() {
         guard let stringURL = self.hero.image?.url else {
-            self.view.isUserInteractionEnabled = true
             self.activityIndicator.stopAnimating()
             return
         }
         NetworkManager.shared.fetchImageData(from: stringURL) { image in
             self.imageHeroImageView.image = image
             self.imageHeroImageView.isHidden.toggle()
-            self.view.isUserInteractionEnabled = true
             self.activityIndicator.stopAnimating()
         }
     }

@@ -65,14 +65,25 @@
                             <outlet property="delegate" destination="6On-H8-BzT" id="Y6v-Sn-idq"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" title="Superheroes" id="Ubr-A5-j7n"/>
+                    <navigationItem key="navigationItem" title="Superheroes" id="Ubr-A5-j7n">
+                        <barButtonItem key="leftBarButtonItem" title="⤵️ All" id="k2D-Il-rFz">
+                            <connections>
+                                <action selector="allBarButtonPressed:" destination="6On-H8-BzT" id="kt2-7A-lCE"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="🔄 Few" id="mwO-Lf-IZG">
+                            <connections>
+                                <action selector="randomBarButtonPressed:" destination="6On-H8-BzT" id="zn6-od-Fh8"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="activityIndicator" destination="k2f-1s-JKs" id="Sf6-a6-gGV"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ymq-T9-k4a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="110.625" y="786.97183098591552"/>
+            <point key="canvasLocation" x="-45" y="787"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="f3X-QZ-PEJ">
@@ -344,7 +355,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YO9-YE-MJb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1179" y="787"/>
+            <point key="canvasLocation" x="964" y="787"/>
         </scene>
     </scenes>
     <resources>
