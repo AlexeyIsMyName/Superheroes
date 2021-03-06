@@ -17,6 +17,8 @@
 		E79CF32E25ED90F400056B17 /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79CF32D25ED90F400056B17 /* MainTableViewController.swift */; };
 		E79CF34025ED95D500056B17 /* Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79CF33F25ED95D500056B17 /* Hero.swift */; };
 		E7AAC23C25F3D9F300327366 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7AAC23B25F3D9F300327366 /* NetworkManager.swift */; };
+		E7E508BB25F42B17007DD67F /* HeroShortInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E508BA25F42B17007DD67F /* HeroShortInfoCell.swift */; };
+		E7E508BE25F42BCE007DD67F /* MainCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E508BD25F42BCE007DD67F /* MainCollectionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		E79CF32D25ED90F400056B17 /* MainTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
 		E79CF33F25ED95D500056B17 /* Hero.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hero.swift; sourceTree = "<group>"; };
 		E7AAC23B25F3D9F300327366 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		E7E508BA25F42B17007DD67F /* HeroShortInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroShortInfoCell.swift; sourceTree = "<group>"; };
+		E7E508BD25F42BCE007DD67F /* MainCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +124,8 @@
 			children = (
 				E79CF32D25ED90F400056B17 /* MainTableViewController.swift */,
 				E758631325EDB0EC008A2559 /* DetailsHeroViewController.swift */,
+				E7E508BA25F42B17007DD67F /* HeroShortInfoCell.swift */,
+				E7E508BD25F42BCE007DD67F /* MainCollectionViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -263,8 +269,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				E7AAC23C25F3D9F300327366 /* NetworkManager.swift in Sources */,
+				E7E508BE25F42BCE007DD67F /* MainCollectionViewController.swift in Sources */,
 				E79CF30E25ED8B6E00056B17 /* AppDelegate.swift in Sources */,
 				E79CF34025ED95D500056B17 /* Hero.swift in Sources */,
+				E7E508BB25F42B17007DD67F /* HeroShortInfoCell.swift in Sources */,
 				E79CF32E25ED90F400056B17 /* MainTableViewController.swift in Sources */,
 				E79CF31025ED8B6E00056B17 /* SceneDelegate.swift in Sources */,
 				E758631425EDB0EC008A2559 /* DetailsHeroViewController.swift in Sources */,

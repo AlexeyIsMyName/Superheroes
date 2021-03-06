@@ -21,7 +21,7 @@ class DetailsHeroViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.isUserInteractionEnabled = false
+        //view.isUserInteractionEnabled = false
         configureImage()
         navigationItem.title = hero.name
         powerstatsLabel.text = hero.powerstats?.description
