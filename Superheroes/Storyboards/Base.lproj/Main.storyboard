@@ -123,7 +123,7 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <outlet property="nameHeroLabel" destination="oSu-de-j0C" id="t8K-Om-zAC"/>
-                                    <segue destination="tLq-N4-een" kind="show" id="rkN-Fm-8Dh"/>
+                                    <segue destination="m58-A1-A7G" kind="show" id="OBz-4b-QKw"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -140,6 +140,87 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ymq-T9-k4a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="110.625" y="786.97183098591552"/>
+        </scene>
+        <!--Details Hero Collection View Controller-->
+        <scene sceneID="8gD-qq-v5A">
+            <objects>
+                <collectionViewController id="m58-A1-A7G" customClass="DetailsHeroCollectionViewController" customModule="Superheroes" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="m2X-JD-Jeo">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="24" minimumInteritemSpacing="0.0" id="PAL-rf-OH2">
+                            <size key="itemSize" width="290" height="290"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="24" maxX="0.0" maxY="24"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="imageCell" id="ibY-ZC-SUV" customClass="ImageHeroViewCell" customModule="Superheroes" customModuleProvider="target">
+                                <rect key="frame" x="15" y="24" width="290" height="290"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="uH1-p6-5dN" customClass="ImageHeroViewCell" customModule="Superheroes" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="290" height="290"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1kS-ah-WC2">
+                                            <rect key="frame" x="0.0" y="0.0" width="290" height="290"/>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="1kS-ah-WC2" firstAttribute="leading" secondItem="uH1-p6-5dN" secondAttribute="leading" id="JcZ-4F-qMP"/>
+                                        <constraint firstAttribute="bottom" secondItem="1kS-ah-WC2" secondAttribute="bottom" id="OgZ-w0-3Pt"/>
+                                        <constraint firstAttribute="trailing" secondItem="1kS-ah-WC2" secondAttribute="trailing" id="PE6-Ys-3RO"/>
+                                        <constraint firstItem="1kS-ah-WC2" firstAttribute="top" secondItem="uH1-p6-5dN" secondAttribute="top" id="yfS-82-v5M"/>
+                                    </constraints>
+                                </collectionViewCellContentView>
+                                <color key="backgroundColor" red="0.83216959239999999" green="0.98548370600000001" blue="0.47333085539999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="imageHero" destination="1kS-ah-WC2" id="l6v-P6-MB3"/>
+                                </connections>
+                            </collectionViewCell>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="zFh-ZB-mEu" customClass="HeroLongInfoCell" customModule="Superheroes" customModuleProvider="target">
+                                <rect key="frame" x="15" y="338" width="290" height="290"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="f3F-r5-V9g">
+                                    <rect key="frame" x="0.0" y="0.0" width="290" height="290"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Ck-rp-sXV">
+                                            <rect key="frame" x="124" y="134.5" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="6Ck-rp-sXV" firstAttribute="centerY" secondItem="f3F-r5-V9g" secondAttribute="centerY" id="OcD-oo-qjk"/>
+                                        <constraint firstItem="6Ck-rp-sXV" firstAttribute="centerX" secondItem="f3F-r5-V9g" secondAttribute="centerX" id="y2K-s0-S6a"/>
+                                    </constraints>
+                                </collectionViewCellContentView>
+                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="m58-A1-A7G" id="V76-zu-oia"/>
+                            <outlet property="delegate" destination="m58-A1-A7G" id="tl7-Y7-BdB"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" id="Ihp-24-RYe"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ex3-UT-Lvm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1179" y="787"/>
         </scene>
         <!--Details Hero View Controller-->
         <scene sceneID="oth-rR-yIV">
@@ -449,12 +530,12 @@
                                         <rect key="frame" x="0.0" y="47" width="300" height="97"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Powerstats" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qag-iv-BMU">
-                                                <rect key="frame" x="0.0" y="0.0" width="300" height="28"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="300" height="73.5"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="24"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="379-8s-KbC">
-                                                <rect key="frame" x="0.0" y="28" width="300" height="69"/>
+                                                <rect key="frame" x="0.0" y="73.5" width="300" height="23.5"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <attributedString key="attributedText">
                                                     <fragment content="Label">
@@ -537,13 +618,13 @@
                                         <rect key="frame" x="0.0" y="256" width="300" height="92"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Appearance" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M96-G8-VHZ">
-                                                <rect key="frame" x="0.0" y="0.0" width="300" height="71"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="300" height="28"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="24"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ume-bi-OUy">
-                                                <rect key="frame" x="0.0" y="71" width="300" height="21"/>
+                                                <rect key="frame" x="0.0" y="28" width="300" height="64"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <attributedString key="attributedText">
                                                     <fragment content="Label">
@@ -619,13 +700,13 @@
                                         <rect key="frame" x="0.0" y="460" width="300" height="62"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Connections" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gzA-gz-YPw">
-                                                <rect key="frame" x="0.0" y="0.0" width="300" height="41"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="300" height="28"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="24"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="20J-hO-7aw">
-                                                <rect key="frame" x="0.0" y="41" width="300" height="21"/>
+                                                <rect key="frame" x="0.0" y="28" width="300" height="34"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <attributedString key="attributedText">
                                                     <fragment content="Label">
@@ -683,7 +764,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YO9-YE-MJb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1125" y="787"/>
+            <point key="canvasLocation" x="2100" y="18"/>
         </scene>
     </scenes>
     <resources>

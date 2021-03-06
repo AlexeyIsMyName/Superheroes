@@ -17,14 +17,15 @@ class MainCollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         showSpinner()
-        fetchHeroes(getAll: true)
+        fetchHeroes(getAll: false)
     }
     
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let detailsHeroVC = segue.destination as? DetailsHeroViewController else { return }
+        guard let detailsHeroCVC = segue.destination as? DetailsHeroCollectionViewController else { return }
         guard let indexPath = collectionView.indexPathsForSelectedItems?[0] else { return }
-        detailsHeroVC.hero = heroes[indexPath.row]
+        
+        detailsHeroCVC.hero = heroes[indexPath.row]
     }
     
     // MARK: UICollectionViewDataSource
