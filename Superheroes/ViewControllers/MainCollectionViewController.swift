@@ -23,7 +23,6 @@ class MainCollectionViewController: UICollectionViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let detailsHeroVC = segue.destination as? DetailsHeroViewController else { return }
         guard let indexPath = collectionView.indexPathsForSelectedItems?[0] else { return }
-        
         detailsHeroVC.hero = heroes[indexPath.row]
     }
     
@@ -58,15 +57,11 @@ extension MainCollectionViewController: UICollectionViewDelegateFlowLayout {
 
 extension MainCollectionViewController {
     private func fetchHeroes(getAll: Bool) {
-        showSpinner()
+        activityIndicator.startAnimating()
         NetworkManager.shared.fetchHeroData(getAll: getAll) { heroes in
             self.heroes = heroes
             self.collectionView.reloadData()
             self.activityIndicator.stopAnimating()
         }
-    }
-    
-    private func showSpinner() {
-        activityIndicator.startAnimating()
     }
 }

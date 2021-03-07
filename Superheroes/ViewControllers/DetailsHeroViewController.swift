@@ -31,31 +31,33 @@ class DetailsHeroViewController: UIViewController {
         configureDetailViews()
         configureImage()
     }
-    
+}
+
+extension DetailsHeroViewController {
     private func configureDetailViews() {
         if let powerstatsText = hero.powerstats?.description {
             powerstatsLabel.text = powerstatsText
-            powerstatsView.isHidden = false
+            powerstatsView.isHidden.toggle()
         }
         
         if let biographyText = hero.biography?.description {
             biographyLabel.text = biographyText
-            biographyView.isHidden = false
+            biographyView.isHidden.toggle()
         }
         
         if let appearanceText = hero.appearance?.description {
             appearanceLabel.text = appearanceText
-            appearanceView.isHidden = false
+            appearanceView.isHidden.toggle()
         }
         
         if let workText = hero.work?.description {
             workLabel.text = workText
-            workView.isHidden = false
+            workView.isHidden.toggle()
         }
         
         if let connectionsText = hero.connections?.description {
             connectionsLabel.text = connectionsText
-            connectionsView.isHidden = false
+            connectionsView.isHidden.toggle()
         }
     }
     
@@ -69,10 +71,5 @@ class DetailsHeroViewController: UIViewController {
             self.imageHeroImageView.isHidden.toggle()
             self.activityIndicator.stopAnimating()
         }
-    }
-    
-    private func showSpinner() {
-        activityIndicator.center = view.center
-        activityIndicator.startAnimating()
     }
 }

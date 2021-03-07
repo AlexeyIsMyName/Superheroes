@@ -11,12 +11,12 @@ import Alamofire
 class NetworkManager {
     static let shared = NetworkManager()
     
-    private var heroes: [Hero] = []
+    private var heroesCash: [Hero] = []
     
     private init() {}
     
     func fetchHeroData(getAll: Bool, with complition: @escaping ([Hero]) -> Void) {
-        heroes = []
+        heroesCash = []
         
         let rangeRandom = 1...21
         let rangeAll = 1...732
@@ -35,16 +35,16 @@ class NetworkManager {
                     switch responseData.result {
                     case .success(let value):
                         DispatchQueue.main.async {
-                            self.heroes += Hero.getHeroArrayCell(from: value)
+                            self.heroesCash += Hero.getHeroArrayCell(from: value)
                             
                             if !getAll && id == rangeRandom.max() || getAll && id == rangeAll.max() {
-                                self.heroes.sort { (hero1, hero0) -> Bool in
+                                self.heroesCash.sort { (hero1, hero0) -> Bool in
                                     if let name1 = hero1.name, let name0 = hero0.name {
                                         return name1 < name0
                                     }
                                     return false
                                 }
-                                complition(self.heroes)
+                                complition(self.heroesCash)
                             }
                         }
                     case .failure(let error):
