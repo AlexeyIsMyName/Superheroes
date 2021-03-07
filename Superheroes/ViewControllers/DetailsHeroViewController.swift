@@ -8,6 +8,12 @@
 import UIKit
 class DetailsHeroViewController: UIViewController {
 
+    @IBOutlet var workView: UIView!
+    @IBOutlet var connectionsView: UIView!
+    @IBOutlet var appearanceView: UIView!
+    @IBOutlet var biographyView: UIView!
+    @IBOutlet var powerstatsView: UIView!
+    
     @IBOutlet var imageHeroImageView: UIImageView!
     @IBOutlet var powerstatsLabel: UILabel!
     @IBOutlet var biographyLabel: UILabel!
@@ -21,13 +27,36 @@ class DetailsHeroViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureImage()
         navigationItem.title = hero.name
-        powerstatsLabel.text = hero.powerstats?.description
-        biographyLabel.text = hero.biography?.description
-        appearanceLabel.text = hero.appearance?.description
-        workLabel.text = hero.work?.description
-        connectionsLabel.text = hero.connections?.description
+        configureDetailViews()
+        configureImage()
+    }
+    
+    private func configureDetailViews() {
+        if let powerstatsText = hero.powerstats?.description {
+            powerstatsLabel.text = powerstatsText
+            powerstatsView.isHidden = false
+        }
+        
+        if let biographyText = hero.biography?.description {
+            biographyLabel.text = biographyText
+            biographyView.isHidden = false
+        }
+        
+        if let appearanceText = hero.appearance?.description {
+            appearanceLabel.text = appearanceText
+            appearanceView.isHidden = false
+        }
+        
+        if let workText = hero.work?.description {
+            workLabel.text = workText
+            workView.isHidden = false
+        }
+        
+        if let connectionsText = hero.connections?.description {
+            connectionsLabel.text = connectionsText
+            connectionsView.isHidden = false
+        }
     }
     
     private func configureImage() {

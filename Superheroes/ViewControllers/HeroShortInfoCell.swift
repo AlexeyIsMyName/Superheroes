@@ -24,5 +24,4 @@ class HeroShortInfoCell: UICollectionViewCell {
         nameHeroLabel.text = name
         publisherHeroLabel.text = publisher
     }
-    
 }

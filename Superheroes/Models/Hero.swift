@@ -50,17 +50,38 @@ struct PowerstatsHero: Decodable {
     let power: String?
     let combat: String?
     
-    var description: String {
-        """
-        ⌁
-        🤓 Intelligence: \(intelligence ?? "")
-        💪 Strength: \(strength ?? "")
-        🏃 Speed: \(speed ?? "")
-        Durability: \(durability ?? "") 💎
-        Power: \(power ?? "") 🍔
-        Combat: \(combat ?? "") 🤺
-        ⌁
-        """
+    var description: String? {
+        var description = "⌁\n"
+        
+        if let intelligence = intelligence, intelligence != "null" {
+            description += "🤓 Intelligence: \(intelligence)\n"
+        }
+        
+        if let strength = strength, strength != "null" {
+            description += "💪 Strength: \(strength)\n"
+        }
+        
+        if let speed = speed, speed != "null" {
+            description += "🏃 Speed: \(speed)\n"
+        }
+        
+        if let durability = durability, durability != "null" {
+            description += "Durability: \(durability) 💎\n"
+        }
+        
+        if let power = power, power != "null" {
+            description += "Power: \(power) 🍔\n"
+        }
+        
+        if let combat = combat, combat != "null" {
+            description += "Combat: \(combat) 🤺\n"
+        }
+        
+        if description == "⌁\n" {
+            return nil
+        } else {
+            return (description + "⌁")
+        }
     }
     
     init(powerstatsHeroData: [String: String]) {
@@ -93,27 +114,42 @@ struct BiographyHero: Decodable {
     let publisher: String?
     let alignment: String?
     
-    var description: String {
-        return """
-        ⌁
-        ✪ Full Name: \(fullName ?? "unknown")
+    var description: String? {
+        var description = "⌁\n"
         
-        ⎌ Alter-egos: \(alterEgos ?? "unknown")
-
-        ⎆ Aliases:
-        \(aliases?.joined(separator: ", ") ?? "unknown")
+        if let fullName = fullName, fullName != "" {
+            description += "✪ Full Name:\n\(fullName)\n\n"
+        }
         
-        ⚓︎ Place of Birth:
-        \(placeOfBirth ?? "unknown")
+        if let alterEgos = alterEgos, alterEgos != "No alter egos found." {
+            description += "⎌ Alter-egos:\n\(alterEgos)\n\n"
+        }
         
-        ⚐ First Appearance:
-        \(firstAppearance ?? "unknown")
+        if let aliases = aliases, aliases.joined(separator: ", ") != "-" {
+            description += "⎆ Aliases:\n\(aliases.joined(separator: ", "))\n\n"
+        }
         
-        ® Publisher: \(publisher ?? "unknown")
+        if let placeOfBirth = placeOfBirth, placeOfBirth != "-", placeOfBirth != "Place of birth unknown" {
+            description += "⚓︎ Place of Birth:\n\(placeOfBirth)\n\n"
+        }
         
-        ⚔︎ Alignment: \(alignment ?? "unknown")
-        ⌁
-        """
+        if let firstAppearance = firstAppearance, firstAppearance != "-" {
+            description += "⚐ First Appearance:\n\(firstAppearance)\n\n"
+        }
+        
+        if let publisher = publisher, publisher != "-",  publisher != "null" {
+            description += "® Publisher: \(publisher)\n\n"
+        }
+        
+        if let alignment = alignment, alignment != "-" {
+            description += "⚔︎ Alignment: \(alignment)\n"
+        }
+        
+        if description == "⌁\n" {
+            return nil
+        } else {
+            return (description + "⌁")
+        }
     }
     
     init(biographyHeroData: [String: Any]) {
@@ -145,17 +181,38 @@ struct AppearanceHero: Decodable {
     let eyeColor: String?
     let hairColor: String?
     
-    var description: String {
-        """
-        ⌁
-        Gender: \(gender ?? "unknown")
-        Race: \(race ?? "unknown")
-        Height: \(height?.joined(separator: ", ") ?? "unknown")
-        Weight: \(weight?.joined(separator: ", ") ?? "unknown")
-        Eye Color: \(eyeColor ?? "unknown")
-        Hair Color: \(hairColor ?? "unknown")
-        ⌁
-        """
+    var description: String? {
+        var description = "⌁\n"
+        
+        if let gender = gender, gender != "-" {
+            description += "Gender: \(gender)\n"
+        }
+        
+        if let race = race, race != "null" {
+            description += "Race: \(race)\n"
+        }
+        
+        if let height = height, height.joined(separator: ", ") != "-, 0 cm" {
+            description += "Height: \(height.joined(separator: ", "))\n"
+        }
+        
+        if let weight = weight, weight.joined(separator: ", ") != "- lb, 0 kg" {
+            description += "Weight: \(weight.joined(separator: ", "))\n"
+        }
+        
+        if let eyeColor = eyeColor, eyeColor != "-" {
+            description += "Eye Color: \(eyeColor)\n"
+        }
+        
+        if let hairColor = hairColor, hairColor != "-" {
+            description += "Hair Color: \(hairColor)\n"
+        }
+        
+        if description == "⌁\n" {
+            return nil
+        } else {
+            return (description + "⌁")
+        }
     }
     
     init(appearanceHeroData: [String: Any]) {
@@ -173,16 +230,23 @@ struct WorkHero: Decodable {
     let occupation: String?
     let base: String?
     
-    var description: String {
-        """
-        ⌁
-        Occupation:
-        \(occupation ?? "unknown")
-
-        Bace:
-        \(base ?? "unknown")
-        ⌁
-        """
+    var description: String? {
+        
+        var description = "⌁\n"
+        
+        if let occupation = occupation, occupation != "-" {
+            description += "Occupation:\n\(occupation)\n\n"
+        }
+        
+        if let base = base, base != "-" {
+            description += "Bace:\n\(base)\n"
+        }
+        
+        if description == "⌁\n" {
+            return nil
+        } else {
+            return (description + "⌁")
+        }
     }
     
     init(workHeroData: [String: String]) {
@@ -201,16 +265,22 @@ struct ConnectionsHero: Decodable {
     let groupAffiliation: String?
     let relatives: String?
     
-    var description: String {
-        """
-        ⌁
-        Group Affiliation:
-        \(groupAffiliation ?? "unknown")
-
-        Relatives:
-        \(relatives ?? "unknown")
-        ⌁
-        """
+    var description: String? {
+        var description = "⌁\n"
+        
+        if let groupAffiliation = groupAffiliation, groupAffiliation != "-" {
+            description += "Group Affiliation:\n\(groupAffiliation)\n\n"
+        }
+        
+        if let relatives = relatives, relatives != "-" {
+            description += "Relatives:\n\(relatives)\n"
+        }
+        
+        if description == "⌁\n" {
+            return nil
+        } else {
+            return (description + "⌁")
+        }
     }
     
     init(connectionsHeroData: [String: String]) {

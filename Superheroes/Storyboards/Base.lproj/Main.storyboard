@@ -124,18 +124,18 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Qnf-df-9GQ">
-                                <rect key="frame" x="10" y="10" width="300" height="502"/>
+                                <rect key="frame" x="10" y="10" width="300" height="559.5"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="35E-WL-w10">
-                                        <rect key="frame" x="0.0" y="0.0" width="300" height="97"/>
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="35E-WL-w10">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="0.0"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Powerstats" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qag-iv-BMU">
-                                                <rect key="frame" x="0.0" y="0.0" width="300" height="73.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="300" height="0.0"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="24"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="379-8s-KbC">
-                                                <rect key="frame" x="0.0" y="73.5" width="300" height="23.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="300" height="0.0"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <attributedString key="attributedText">
                                                     <fragment content="Label">
@@ -166,16 +166,16 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5P4-u5-DgC">
-                                        <rect key="frame" x="0.0" y="110" width="300" height="58"/>
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5P4-u5-DgC">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="0.0"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Biography" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uV3-d9-DPq">
-                                                <rect key="frame" x="0.0" y="0.0" width="300" height="37"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="300" height="0.0"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="24"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9s3-fJ-PQf">
-                                                <rect key="frame" x="0.0" y="37" width="300" height="21"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="300" height="0.0"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <attributedString key="attributedText">
                                                     <fragment content="Label">
@@ -207,29 +207,29 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" id="0f0-81-tht">
-                                        <rect key="frame" x="0.0" y="180.5" width="300" height="37"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="559.5"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="color" systemColor="systemPinkColor"/>
                                     </activityIndicatorView>
                                     <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VJr-pq-VIn">
-                                        <rect key="frame" x="0.0" y="222.5" width="300" height="0.0"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="0.0"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                 <integer key="value" value="10"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hWD-hL-y70">
-                                        <rect key="frame" x="0.0" y="230.5" width="300" height="92"/>
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hWD-hL-y70">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="0.0"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Appearance" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M96-G8-VHZ">
-                                                <rect key="frame" x="0.0" y="0.0" width="300" height="28"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="300" height="0.0"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="24"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ume-bi-OUy">
-                                                <rect key="frame" x="0.0" y="28" width="300" height="64"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="300" height="0.0"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <attributedString key="attributedText">
                                                     <fragment content="Label">
@@ -260,17 +260,17 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ICS-Kw-S3W">
-                                        <rect key="frame" x="0.0" y="335" width="300" height="92"/>
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ICS-Kw-S3W">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="0.0"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Work" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IO0-It-PvX">
-                                                <rect key="frame" x="0.0" y="0.0" width="300" height="28"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="300" height="0.0"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="24"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7HS-hd-yiX">
-                                                <rect key="frame" x="0.0" y="28" width="300" height="64"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="300" height="0.0"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <attributedString key="attributedText">
                                                     <fragment content="Label">
@@ -301,17 +301,17 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TsR-zS-g3p">
-                                        <rect key="frame" x="0.0" y="440" width="300" height="62"/>
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TsR-zS-g3p">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="0.0"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Connections" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gzA-gz-YPw">
-                                                <rect key="frame" x="0.0" y="0.0" width="300" height="28"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="300" height="0.0"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="24"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="20J-hO-7aw">
-                                                <rect key="frame" x="0.0" y="28" width="300" height="34"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="300" height="0.0"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <attributedString key="attributedText">
                                                     <fragment content="Label">
@@ -360,11 +360,16 @@
                     <connections>
                         <outlet property="activityIndicator" destination="0f0-81-tht" id="Oji-Nu-J9F"/>
                         <outlet property="appearanceLabel" destination="ume-bi-OUy" id="wF4-lc-dHw"/>
+                        <outlet property="appearanceView" destination="hWD-hL-y70" id="B91-3b-d3u"/>
                         <outlet property="biographyLabel" destination="9s3-fJ-PQf" id="GSc-80-A9s"/>
+                        <outlet property="biographyView" destination="5P4-u5-DgC" id="S7H-0t-HYs"/>
                         <outlet property="connectionsLabel" destination="20J-hO-7aw" id="wDE-Yu-FEn"/>
+                        <outlet property="connectionsView" destination="TsR-zS-g3p" id="6BT-9W-a0h"/>
                         <outlet property="imageHeroImageView" destination="VJr-pq-VIn" id="uEc-6W-PKu"/>
                         <outlet property="powerstatsLabel" destination="379-8s-KbC" id="9Yj-GM-2Hq"/>
+                        <outlet property="powerstatsView" destination="35E-WL-w10" id="s5Y-r4-jBe"/>
                         <outlet property="workLabel" destination="7HS-hd-yiX" id="sec-yh-E6G"/>
+                        <outlet property="workView" destination="ICS-Kw-S3W" id="b0f-Bx-I1y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YO9-YE-MJb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
