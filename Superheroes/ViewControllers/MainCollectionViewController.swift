@@ -35,8 +35,8 @@ class MainCollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! HeroShortInfoCell
         
-        let hero = heroes[indexPath.row]
-        cell.nameHeroLabel.text = hero.name
+        let hero = heroes[indexPath.row]        
+        cell.configureCell(with: hero.name, and: hero.biography?.publisher)
     
         return cell
     }
